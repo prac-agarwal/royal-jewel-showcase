@@ -1,29 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/site/Hero";
+import { MomentumCarousel } from "@/components/site/MomentumCarousel";
+import { Collections } from "@/components/site/Collections";
+import { Heritage } from "@/components/site/Heritage";
+import { CraftTimeline } from "@/components/site/CraftTimeline";
+import { CustomOrderForm } from "@/components/site/CustomOrderForm";
+import { SiteFooter } from "@/components/site/SiteFooter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Jewels of the Desert Palace" },
+      {
+        name: "description",
+        content:
+          "An editorial catalogue of heirloom Rajasthani bridal jewellery — kundan, polki and meenakari pieces handcrafted in the desert palaces of Rajasthan.",
+      },
+      { property: "og:title", content: "Jewels of the Desert Palace" },
+      {
+        property: "og:description",
+        content:
+          "An editorial catalogue of heirloom Rajasthani bridal jewellery handcrafted in Jaipur.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="bg-ivory text-ink min-h-screen">
+      <Hero />
+      <MomentumCarousel />
+      <Collections />
+      <Heritage />
+      <CraftTimeline />
+      <CustomOrderForm />
+      <SiteFooter />
+    </main>
   );
 }

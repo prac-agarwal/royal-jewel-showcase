@@ -63,9 +63,20 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: #faf6ef;
+  --foreground: #2c1a0e;
+  --ivory: #faf6ef;
+  --ivory-soft: #f3ecdd;
+  --gold: #b8872a;
+  --gold-soft: #cba24a;
+  --maroon: #5c1a1a;
+  --maroon-deep: #3d0e0e;
+  --ink: #2c1a0e;
+  --font-display: "Cinzel", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-tagline: "IM Fell English", serif;
   --card: oklch(1 0 0);
+
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
@@ -137,8 +148,97 @@
     border-color: var(--color-border);
   }
 
+  html,
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--ivory);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
   }
 }
+
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+@utility font-tagline {
+  font-family: var(--font-tagline);
+  letter-spacing: 0.08em;
+}
+
+@utility text-gold {
+  color: var(--gold);
+}
+@utility text-maroon {
+  color: var(--maroon);
+}
+@utility text-ink {
+  color: var(--ink);
+}
+@utility text-ivory {
+  color: var(--ivory);
+}
+@utility bg-ivory {
+  background-color: var(--ivory);
+}
+@utility bg-ivory-soft {
+  background-color: var(--ivory-soft);
+}
+@utility bg-maroon {
+  background-color: var(--maroon);
+}
+@utility bg-maroon-deep {
+  background-color: var(--maroon-deep);
+}
+@utility bg-gold {
+  background-color: var(--gold);
+}
+@utility border-gold {
+  border-color: var(--gold);
+}
+
+@utility chamfer-sm {
+  clip-path: polygon(
+    10px 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px),
+    0 10px
+  );
+}
+
+@utility chamfer-md {
+  clip-path: polygon(
+    18px 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% calc(100% - 18px),
+    calc(100% - 18px) 100%,
+    18px 100%,
+    0 calc(100% - 18px),
+    0 18px
+  );
+}
+
+@utility chamfer-lg {
+  clip-path: polygon(
+    28px 0,
+    calc(100% - 28px) 0,
+    100% 28px,
+    100% calc(100% - 28px),
+    calc(100% - 28px) 100%,
+    28px 100%,
+    0 calc(100% - 28px),
+    0 28px
+  );
+}
+
