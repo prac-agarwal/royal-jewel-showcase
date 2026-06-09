@@ -63,9 +63,20 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: #faf6ef;
+  --foreground: #2c1a0e;
+  --ivory: #faf6ef;
+  --ivory-soft: #f3ecdd;
+  --gold: #b8872a;
+  --gold-soft: #cba24a;
+  --maroon: #5c1a1a;
+  --maroon-deep: #3d0e0e;
+  --ink: #2c1a0e;
+  --font-display: "Cinzel", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-tagline: "IM Fell English", serif;
   --card: oklch(1 0 0);
+
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
