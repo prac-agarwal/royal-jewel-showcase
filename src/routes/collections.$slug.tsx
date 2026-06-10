@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import {
   ALL_CATEGORIES,
   type Category,
+  type Item,
   findCollection,
   formatInr,
 } from "@/lib/collections-data";
