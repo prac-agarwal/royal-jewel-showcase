@@ -75,14 +75,14 @@ function CollectionPage() {
   const presentCategories = useMemo(
     () =>
       ALL_CATEGORIES.filter((c) =>
-        collection.items.some((it) => it.category === c),
+        collection.items.some((it: Item) => it.category === c),
       ),
     [collection],
   );
 
   const filtered = useMemo(() => {
     const band = PRICE_BANDS[bandIdx];
-    return collection.items.filter((it) => {
+    return collection.items.filter((it: Item) => {
       const inCat = activeCats.size === 0 || activeCats.has(it.category);
       const inPrice = it.price >= band.min && it.price <= band.max;
       return inCat && inPrice;
