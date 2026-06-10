@@ -197,7 +197,7 @@ function CollectionPage() {
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-10 lg:grid-cols-4">
-            {filtered.map((it) => (
+            {filtered.map((it: Item) => (
               <article key={it.id} className="group">
                 <div className="chamfer-md bg-ivory-soft relative aspect-square w-full overflow-hidden">
                   <img
