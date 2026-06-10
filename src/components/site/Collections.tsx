@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import g1 from "@/assets/collection-1.jpg";
 import g2 from "@/assets/collection-2.jpg";
 import g3 from "@/assets/collection-3.jpg";
@@ -8,6 +9,7 @@ interface Tile {
   img: string;
   category: string;
   caption: string;
+  slug: string;
   spans?: string;
 }
 
@@ -16,12 +18,33 @@ const tiles: Tile[] = [
     img: g1,
     category: "The Bridal Vault",
     caption: "Heirloom sets, sealed in velvet and silk",
+    slug: "bridal-vault",
     spans: "md:col-span-2 md:row-span-2",
   },
-  { img: g2, category: "Emerald Court", caption: "Polki & uncut diamonds" },
-  { img: g3, category: "Temple Gold", caption: "Antique 22k devotional pieces" },
-  { img: g4, category: "Everyday Heirlooms", caption: "Delicate chandbalis & chokers" },
-  { img: g5, category: "Royal Regalia", caption: "Kamarbandh, payal & full sets" },
+  {
+    img: g2,
+    category: "Emerald Court",
+    caption: "Polki & uncut diamonds",
+    slug: "emerald-court",
+  },
+  {
+    img: g3,
+    category: "Temple Gold",
+    caption: "Antique 22k devotional pieces",
+    slug: "temple-gold",
+  },
+  {
+    img: g4,
+    category: "Everyday Heirlooms",
+    caption: "Delicate chandbalis & chokers",
+    slug: "everyday-heirlooms",
+  },
+  {
+    img: g5,
+    category: "Royal Regalia",
+    caption: "Kamarbandh, payal & full sets",
+    slug: "royal-regalia",
+  },
 ];
 
 export function Collections() {
@@ -44,10 +67,11 @@ export function Collections() {
         </div>
 
         <div className="mt-16 grid auto-rows-[260px] grid-cols-1 gap-5 md:mt-24 md:auto-rows-[300px] md:grid-cols-3 md:gap-6">
-          {tiles.map((t, i) => (
-            <a
-              key={i}
-              href="#"
+          {tiles.map((t) => (
+            <Link
+              key={t.slug}
+              to="/collections/$slug"
+              params={{ slug: t.slug }}
               className={`group chamfer-md relative block overflow-hidden ${t.spans ?? ""}`}
             >
               <img
@@ -70,8 +94,11 @@ export function Collections() {
                 <h3 className="font-display text-ivory mt-2 text-2xl md:text-3xl">
                   {t.category}
                 </h3>
+                <p className="font-tagline text-gold mt-3 text-[10px] uppercase tracking-[0.4em] opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  Enter the collection →
+                </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
