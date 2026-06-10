@@ -5,21 +5,40 @@ import c3 from "@/assets/carousel-3.jpg";
 import c4 from "@/assets/carousel-4.jpg";
 import c5 from "@/assets/carousel-5.jpg";
 import c6 from "@/assets/carousel-6.jpg";
+import c7 from "@/assets/carousel-7.jpg";
+import c8 from "@/assets/carousel-8.jpg";
+import c9 from "@/assets/carousel-9.jpg";
+import c10 from "@/assets/carousel-10.jpg";
+import p1 from "@/assets/piece-1.png";
+import p2 from "@/assets/piece-2.png";
+import p3 from "@/assets/piece-3.png";
+import p4 from "@/assets/piece-4.png";
+import p5 from "@/assets/piece-5.png";
+import p6 from "@/assets/piece-6.png";
+import p7 from "@/assets/piece-7.png";
+import p8 from "@/assets/piece-8.png";
+import p9 from "@/assets/piece-9.png";
+import p10 from "@/assets/piece-10.png";
 
 interface Piece {
   img: string;
+  piece: string;
   name: string;
   tag: string;
   price: string;
 }
 
 const pieces: Piece[] = [
-  { img: c1, name: "Rani Haar of Mewar", tag: "Necklace · Kundan & Emerald", price: "₹ 8,40,000" },
-  { img: c2, name: "Jhumka Sitara", tag: "Earrings · Gold & Pearl", price: "₹ 2,15,000" },
-  { img: c3, name: "Matha Patti Surya", tag: "Maang Tikka · Polki", price: "₹ 3,90,000" },
-  { img: c4, name: "Nath of Marwar", tag: "Nose Ring · Ruby & Pearl", price: "₹ 1,75,000" },
-  { img: c5, name: "Chooda of the Bride", tag: "Bangles · Lac & Kundan", price: "₹ 4,60,000" },
-  { img: c6, name: "Haathphool Padma", tag: "Hand Harness · Kundan", price: "₹ 2,95,000" },
+  { img: c1, piece: p1, name: "Rani Haar of Mewar", tag: "Necklace · Kundan & Emerald", price: "₹ 8,40,000" },
+  { img: c2, piece: p2, name: "Jhumka Sitara", tag: "Earrings · Gold & Pearl", price: "₹ 2,15,000" },
+  { img: c3, piece: p3, name: "Matha Patti Surya", tag: "Maang Tikka · Polki", price: "₹ 3,90,000" },
+  { img: c4, piece: p4, name: "Nath of Marwar", tag: "Nose Ring · Ruby & Pearl", price: "₹ 1,75,000" },
+  { img: c5, piece: p5, name: "Chooda of the Bride", tag: "Bangles · Lac & Kundan", price: "₹ 4,60,000" },
+  { img: c6, piece: p6, name: "Haathphool Padma", tag: "Hand Harness · Kundan", price: "₹ 2,95,000" },
+  { img: c7, piece: p7, name: "Kamarbandh Zarina", tag: "Waist Belt · Gold & Kundan", price: "₹ 5,20,000" },
+  { img: c8, piece: p8, name: "Payal Ghungroo", tag: "Anklets · Sterling Silver", price: "₹ 1,10,000" },
+  { img: c9, piece: p9, name: "Bajuband Aabha", tag: "Armlet · Kundan & Gold", price: "₹ 2,40,000" },
+  { img: c10, piece: p10, name: "Choker Mahal", tag: "Choker · Polki Diamond", price: "₹ 6,75,000" },
 ];
 
 export function MomentumCarousel() {
@@ -144,6 +163,39 @@ export function MomentumCarousel() {
 
   return (
     <section className="bg-ivory relative overflow-hidden py-24 md:py-32">
+      <style>{`
+        @keyframes piece-spin {
+          0% { transform: rotateY(-25deg) rotateX(8deg) scale(0.9); }
+          50% { transform: rotateY(25deg) rotateX(-4deg) scale(1.02); }
+          100% { transform: rotateY(-25deg) rotateX(8deg) scale(0.9); }
+        }
+        .piece-stage {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+          perspective: 1200px;
+        }
+        .piece-3d {
+          transform: rotateY(-25deg) rotateX(8deg) scale(0.9);
+          transition: transform 0.6s ease;
+          filter: drop-shadow(0 25px 35px rgba(92, 26, 26, 0.35))
+                  drop-shadow(0 0 20px rgba(184, 135, 42, 0.4));
+        }
+        .model-img {
+          transition: filter 0.6s ease, transform 0.6s ease;
+        }
+        .piece-card:hover .model-img {
+          filter: blur(18px) brightness(0.85);
+          transform: scale(1.05);
+        }
+        .piece-card:hover .piece-stage {
+          opacity: 1;
+        }
+        .piece-card:hover .piece-3d {
+          animation: piece-spin 6s ease-in-out infinite;
+        }
+      `}</style>
+
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <div className="mb-12 flex items-end justify-between md:mb-20">
           <div>
@@ -151,14 +203,14 @@ export function MomentumCarousel() {
               The Atelier · Volume I
             </p>
             <h2 className="font-display text-maroon mt-4 text-4xl md:text-5xl">
-              Signature Pieces
+              Ten Signature Pieces
             </h2>
           </div>
           <p
             className="text-ink hidden max-w-xs text-right italic md:block"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Drag to wander the collection
+            Drag to wander · Hover to behold
           </p>
         </div>
       </div>
@@ -172,7 +224,7 @@ export function MomentumCarousel() {
           {pieces.map((p, i) => (
             <article
               key={i}
-              className="group w-[78vw] max-w-[420px] flex-shrink-0 sm:w-[58vw] md:w-[36vw] lg:w-[26vw]"
+              className="piece-card group w-[78vw] max-w-[420px] flex-shrink-0 sm:w-[58vw] md:w-[36vw] lg:w-[26vw]"
             >
               <div className="chamfer-lg bg-ivory-soft relative aspect-[3/4] w-full overflow-hidden">
                 <img
@@ -180,8 +232,17 @@ export function MomentumCarousel() {
                   alt={p.name}
                   draggable={false}
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className="model-img h-full w-full object-cover"
                 />
+                <div className="piece-stage absolute inset-0 flex items-center justify-center p-8">
+                  <img
+                    src={p.piece}
+                    alt={`${p.name} piece detail`}
+                    draggable={false}
+                    loading="lazy"
+                    className="piece-3d max-h-[85%] max-w-[85%] object-contain"
+                  />
+                </div>
               </div>
               <div className="mt-6 px-1">
                 <p className="font-tagline text-gold text-[11px] uppercase tracking-[0.3em]">
