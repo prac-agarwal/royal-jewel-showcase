@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero.jpg";
+
 import bg1 from "@/assets/hero-bg-1.jpg";
 import bg2 from "@/assets/hero-bg-2.jpg";
 import bg3 from "@/assets/hero-bg-3.jpg";
