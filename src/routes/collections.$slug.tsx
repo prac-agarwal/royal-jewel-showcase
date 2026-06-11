@@ -90,7 +90,28 @@ function CollectionPage() {
   }, [collection, activeCats, bandIdx]);
 
   return (
-    <div className="bg-ivory text-ink min-h-screen">
+    <div className="bg-ivory text-ink relative min-h-screen">
+      {/* Themed atmospheric backdrop — fixed, faint, sets the mood for this collection */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          backgroundImage: `url(${collection.atmosphere})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          opacity: 0.18,
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(250,246,239,0.55) 0%, rgba(250,246,239,0.85) 60%, rgba(250,246,239,0.95) 100%)",
+        }}
+      />
+      <div className="relative z-10">
       {/* Header / cover */}
       <header className="relative h-[55vh] min-h-[420px] overflow-hidden">
         <img
