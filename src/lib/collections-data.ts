@@ -3,6 +3,11 @@ import g2 from "@/assets/collection-2.jpg";
 import g3 from "@/assets/collection-3.jpg";
 import g4 from "@/assets/collection-4.jpg";
 import g5 from "@/assets/collection-5.jpg";
+import atmBridal from "@/assets/atm-bridal.jpg";
+import atmEmerald from "@/assets/atm-emerald.jpg";
+import atmTemple from "@/assets/atm-temple.jpg";
+import atmEveryday from "@/assets/atm-everyday.jpg";
+import atmRoyal from "@/assets/atm-royal.jpg";
 import p1 from "@/assets/piece-1.png";
 import p2 from "@/assets/piece-2.png";
 import p3 from "@/assets/piece-3.png";
@@ -57,6 +62,7 @@ export interface Collection {
   tagline: string;
   description: string;
   cover: string;
+  atmosphere: string;
   items: Item[];
 }
 
@@ -101,6 +107,7 @@ export const collections: Collection[] = [
     description:
       "Complete bridal trousseaus assembled in our Jaipur atelier — every piece you will wear from the haldi to the vidaai.",
     cover: g1,
+    atmosphere: atmBridal,
     items: [
       mk("bv", 1, "Rani Haar of Mewar", "Necklace", 840000),
       mk("bv", 2, "Sheesh Phool Tikka", "Maang Tikka", 390000),
@@ -123,6 +130,7 @@ export const collections: Collection[] = [
     description:
       "A house dedicated to the green stone — Colombian emeralds paired with rose-cut polki, in the manner of the Mughal court.",
     cover: g2,
+    atmosphere: atmEmerald,
     items: [
       mk("ec", 1, "Emerald Rani Haar", "Necklace", 1240000),
       mk("ec", 2, "Zamrud Choker", "Choker", 880000),
@@ -142,6 +150,7 @@ export const collections: Collection[] = [
     description:
       "Hand-cast in pure 22k gold by temple artisans — motifs of Lakshmi, lotus and peacock untouched for three centuries.",
     cover: g3,
+    atmosphere: atmTemple,
     items: [
       mk("tg", 1, "Lakshmi Haar", "Necklace", 680000),
       mk("tg", 2, "Mango Jhumka", "Earrings", 145000),
@@ -161,6 +170,7 @@ export const collections: Collection[] = [
     description:
       "Light, wearable, and quietly Rajputana — pieces made for office mornings, dinner evenings, and the everything in between.",
     cover: g4,
+    atmosphere: atmEveryday,
     items: [
       mk("eh", 1, "Featherweight Choker", "Choker", 78000),
       mk("eh", 2, "Little Chandbali", "Earrings", 42000),
@@ -181,6 +191,7 @@ export const collections: Collection[] = [
     description:
       "Statement, ceremonial, unapologetic. The pieces commissioned by the Thikanas of Marwar for darbar and durbar alike.",
     cover: g5,
+    atmosphere: atmRoyal,
     items: [
       mk("rr", 1, "Regalia Kamarbandh", "Kamarbandh", 1450000),
       mk("rr", 2, "Maharani Choker", "Choker", 1180000),
