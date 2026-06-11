@@ -12,9 +12,9 @@ const stats = [
 ];
 
 const walls = [
-  { img: haveli1, label: "The Courtyard" },
+  { img: haveli1, label: "The Kundan Setter" },
   { img: haveli2, label: "The Setting Bench" },
-  { img: haveli3, label: "The Jharokha" },
+  { img: haveli3, label: "The Meenakari Hand" },
   { img: haveli4, label: "The Velvet Tray" },
 ];
 
