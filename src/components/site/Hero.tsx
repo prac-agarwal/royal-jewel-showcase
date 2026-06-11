@@ -7,13 +7,7 @@ import { Mandala } from "./ornaments";
 export function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-ivory">
-      {/* Base hero image — fills, softly washed */}
-      <img
-        src={heroImg}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-center"
-      />
+      {/* Base: clean ivory — collage images alone provide imagery */}
 
       {/* Collage strip behind the headline — three palace portraits */}
       <div
