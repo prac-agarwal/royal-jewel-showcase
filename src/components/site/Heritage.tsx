@@ -1,10 +1,21 @@
 import heritageImg from "@/assets/heritage.jpg";
+import haveli1 from "@/assets/haveli-1.jpg";
+import haveli2 from "@/assets/haveli-2.jpg";
+import haveli3 from "@/assets/haveli-3.jpg";
+import haveli4 from "@/assets/haveli-4.jpg";
 import { Rosette } from "./ornaments";
 
 const stats = [
   { value: "1887", label: "Founded in Jaipur" },
   { value: "VII", label: "Generations of artisans" },
   { value: "240+", label: "Master karigars in residence" },
+];
+
+const walls = [
+  { img: haveli1, label: "The Courtyard" },
+  { img: haveli2, label: "The Setting Bench" },
+  { img: haveli3, label: "The Jharokha" },
+  { img: haveli4, label: "The Velvet Tray" },
 ];
 
 export function Heritage() {
@@ -61,6 +72,35 @@ export function Heritage() {
           <p className="font-tagline text-ink/60 mt-5 text-center text-[11px] uppercase tracking-[0.3em]">
             The Workshop · Johari Bazaar
           </p>
+        </div>
+      </div>
+
+      {/* Four walls of the haveli — 2x2 image wall */}
+      <div className="relative mx-auto mt-24 max-w-7xl px-6 md:mt-32 md:px-12">
+        <div className="mb-10 flex flex-col items-center text-center md:mb-14">
+          <p className="font-tagline text-gold text-[11px] uppercase tracking-[0.4em]">
+            The Four Walls
+          </p>
+          <h3 className="font-display text-maroon mt-3 text-3xl md:text-4xl">
+            Inside the haveli
+          </h3>
+        </div>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          {walls.map((w) => (
+            <figure key={w.label} className="group">
+              <div className="chamfer-md relative aspect-[4/5] w-full overflow-hidden">
+                <img
+                  src={w.img}
+                  alt={w.label}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+              <figcaption className="font-tagline text-ink/65 mt-3 text-center text-[10px] uppercase tracking-[0.32em]">
+                {w.label}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>
