@@ -62,6 +62,7 @@ export interface Collection {
   tagline: string;
   description: string;
   cover: string;
+  atmosphere: string;
   items: Item[];
 }
 
