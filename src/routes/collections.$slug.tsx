@@ -258,6 +258,7 @@ function CollectionPage() {
           </Link>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
